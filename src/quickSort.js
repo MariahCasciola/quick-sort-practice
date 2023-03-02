@@ -6,6 +6,12 @@ function quickSort(
 ) {
   // pivot
   // partitionIndex
+  if (lowerIndex < upperIndex) {
+    const index = partition(compare, elements, lowerIndex, upperIndex);
+    quickSort(compare, elements, lowerIndex, index - 1);
+    quickSort(compare, elements, index + 1, upperIndex);
+  }
+  return elements;
 }
 
 // this function returns???
